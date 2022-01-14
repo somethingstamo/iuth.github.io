@@ -2,16 +2,16 @@
     font-size: 80px;
     font-weight: bolder;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 0px 10px currentColor;
     position: absolute;
     user-select: none;
+    border-radius: 10px;
     transition: all 0.2s ease-in-out;
 }
 
 .button:hover{
-    margin-top: -5px;
     box-shadow: 0px 15px currentColor;
+    margin-top: -5px;
 }
 
 .button:active{
