@@ -5,6 +5,26 @@
  */
 var audio = new Audio("./kristoffers-playground/click.wav")
 
+function resizeSecondaries() {
+    let navbar = document.getElementById("navbar")
+    for(let i = 0; i < navbar.children.length; i++) {
+        let li = navbar.children[i].children
+        let secondaries = [], primary, numSecondaries
+        for(let k = 0; k < li.length; k++) { 
+            if(li[k].classList.contains("secondary")) { secondaries.push(li[k]) }
+            else if(li[k].classList.contains("primary")) { primary = li[k] }
+        }
+
+        if(navbar.children[i].hasAttribute("items")) { numSecondaries = navbar.children[i].getAttribute("items") } 
+        else { numSecondaries = (secondaries.length == 1) ? 2 : secondaries.length }
+        secondaryWidth = primary.offsetWidth / numSecondaries
+        for(let j = 0; j < secondaries.length; j++) {
+            secondaries[j].style.width = secondaryWidth + "px"
+            secondaries[j].style.left = j * secondaryWidth + "px"
+        }
+    }
+}
+
 function initializeItems() {
     let navbar = document.getElementById("navbar")
     for(let i = 0; i < navbar.children.length; i++) {
@@ -20,7 +40,6 @@ function initializeItems() {
         if(navbar.children[i].hasAttribute("items")) { numSecondaries = navbar.children[i].getAttribute("items") } 
         else { numSecondaries = (secondaries.length == 1) ? 2 : secondaries.length }
         for(let l = 0; l < secondaries.length; l++) {
-            secondaries[l].style.width = primary.offsetWidth / numSecondaries + "px"
             secondaries[l].classList.add("left")
             secondaries[l].classList.add("right")
         }
@@ -44,8 +63,11 @@ function initializeItems() {
             }
         }
     }
+    resizeSecondaries()
+
 }
 initializeItems()
+window.addEventListener('resize', resizeSecondaries);
 
 function expandItem(itemExpanding) {
     let allItems = itemExpanding.parentElement.children
