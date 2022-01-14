@@ -3,6 +3,11 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+#bodydiv {
+    position: fixed;
+    top: 145px;
+}
+
 #header {
     position: fixed;
     margin: 0px;
