@@ -95,3 +95,7 @@ function dexpandItem(itemDexpanding) {
         // primary.style.borderRadius = "0px 0px 0px 0px"
     }
 }
+
+function badFun() {
+    window.open("oops.html", "_blank")
+}
