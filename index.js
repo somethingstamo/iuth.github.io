@@ -33,8 +33,14 @@ function initializeItems() {
         if(secondaries.length < numSecondaries) {
             primary.classList.add("right")
         }
-        if(i == navbar.children.length - 1 && navbar.getAttribute("edge") != "hard") {
-            primary.classList.add("persistentright")
+        if(navbar.getAttribute("shape") == "full") {
+            navbar.style.width = "100%"
+            navbar.style.height = "45px"
+            navbar.style.backgroundColor = "gray"
+        } else if(navbar.getAttribute("shape") != "hard") {
+            if(i == navbar.children.length - 1) {
+                primary.classList.add("persistentright")
+            }
         }
     }
 }
