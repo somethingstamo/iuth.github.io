@@ -1,0 +1,21 @@
+.button {
+    width: 400px;
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px currentColor;
+    position: absolute;
+    user-select: none;
+}
+
+.button:hover{
+    margin-top: -4px;
+    box-shadow: 0px 14px currentColor;
+}
+
+.button:active{
+    margin-top: 8px;
+    box-shadow: 0px 2px currentColor;
+}
