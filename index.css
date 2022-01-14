@@ -113,3 +113,17 @@ ul#navbar {
     width: 75px;
     border-radius: 50%;
 }
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#invisable {
+    animation-name: fadeout;
+    animation-duration: 60s;
+}
