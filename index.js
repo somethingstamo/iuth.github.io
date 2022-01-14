@@ -26,6 +26,7 @@ function initializeItems() {
         }
         if(secondaries.length == 0) { 
             primary.classList.add("left") 
+            primary.classList.add("right") 
         } else {
             secondaries[0].classList.add("presistentleft")
             secondaries[secondaries.length - 1].classList.add("persistentright")
