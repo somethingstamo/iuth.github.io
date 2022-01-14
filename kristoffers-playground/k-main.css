@@ -1,20 +1,17 @@
 .button {
     font-size: 80px;
+    font-weight: bolder;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 10px currentColor;
     position: absolute;
     user-select: none;
-    transition: all 0.1s ease-in-out;
-}
-
-a{
-    text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
 .button:hover{
-    margin-top: -4px;
-    box-shadow: 0px 14px currentColor;
+    margin-top: -5px;
+    box-shadow: 0px 15px currentColor;
 }
 
 .button:active{
@@ -22,8 +19,13 @@ a{
     box-shadow: 0px 2px currentColor;
 }
 
+a{
+    text-decoration: none;
+}
+
 ul{
     display: inline;
     list-style-type: none;
     margin: 0px;
 }
+

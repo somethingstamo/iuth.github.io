@@ -1,5 +1,5 @@
 var click_effect = new Audio("click.wav");
 
-function OnButtonClick(element) {
+function OnButtonClick() {
     click_effect.play();
 }
