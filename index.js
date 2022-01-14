@@ -3,6 +3,8 @@
  * 
  * @param {HTMLElement} item 
  */
+var audio = new Audio("./kristoffers-playground/click.wav")
+
 function initializeItems() {
     let navbar = document.getElementById("navbar")
     for(let i = 0; i < navbar.children.length; i++) {
@@ -42,9 +44,10 @@ function expandItem(itemExpanding) {
     let allItems = itemExpanding.parentElement.children
     let primary;
     let secondaries = []
+    let mouseWasJustOverSecondary = false
     for(let i = 0; i < allItems.length; i++) {
         if(allItems[i].classList.contains("primary")) { primary = allItems[i] }
-        else if (allItems[i].classList.contains("secondary")) { secondaries.push(allItems[i]) }
+        else if (allItems[i].classList.contains("secondary")) {  secondaries.push(allItems[i]) }
     }
 
     itemExpanding.setAttribute("mouseover", true)
@@ -53,17 +56,8 @@ function expandItem(itemExpanding) {
         secondaries[i].classList.add("expanded")
     }
     primary.classList.add("expanded")
-
-    // if(secondaries.length == 0)      { 
-    //     primary.style.borderRadius = "0px 0px 10px 10px" 
-    // } else if(secondaries.length == 1) { 
-    //     primary.style.borderRadius = "0px 0px 10px 0px"
-    //     secondaries[0].style.borderRadius = "0px 0px 10px 10px"
-    // } else if(secondaries.length == 2) { 
-    //     primary.style.borderRadius = "0px 0px 0px 0px" 
-    //     secondaries[0].style.borderRadius = "0px 0px 0px 10px"
-    //     secondaries[1].style.borderRadius = "0px 0px 10px 0px"
-    // }
+    
+    if(itemExpanding.parentElement.parentElement.getAttribute("sound") == "true") audio.play()
 }
 
 function dexpandItem(itemDexpanding) {
@@ -81,7 +75,7 @@ function dexpandItem(itemDexpanding) {
 
     mouseOverAny = primary.getAttribute("mouseover") == "true" ? true : false
     for(let i = 0; i < secondaries.length; i++) {
-        if(secondaries[i].getAttribute("mouseover") == true) { mouseOverAny = true }
+        if(secondaries[i].getAttribute("mouseover") == "true") { mouseOverAny = true }
     }
     primary.classList.remove("expanded")
 
