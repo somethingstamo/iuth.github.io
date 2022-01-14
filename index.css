@@ -34,4 +34,12 @@ body {
     height: 25px;
     padding: 10px;
     background-color: gray;
+    position: absolute;
+}
+
+ul{
+    display: inline;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 }
