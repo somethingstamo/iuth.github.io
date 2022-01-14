@@ -92,3 +92,9 @@ ul#navbar {
     box-shadow: 0px 5px darkslategray inset;
     padding-top: 15px;
 }
+
+.communism {
+    position: fixed;
+    width: 75px;
+    border-radius: 50%;
+}
