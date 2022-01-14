@@ -33,7 +33,7 @@ function initializeItems() {
         if(secondaries.length < numSecondaries) {
             primary.classList.add("right")
         }
-        if(i == navbar.children.length - 1) {
+        if(i == navbar.children.length - 1 && navbar.getAttribute("edge") != "hard") {
             primary.classList.add("persistentright")
         }
     }
@@ -44,7 +44,6 @@ function expandItem(itemExpanding) {
     let allItems = itemExpanding.parentElement.children
     let primary;
     let secondaries = []
-    let mouseWasJustOverSecondary = false
     for(let i = 0; i < allItems.length; i++) {
         if(allItems[i].classList.contains("primary")) { primary = allItems[i] }
         else if (allItems[i].classList.contains("secondary")) {  secondaries.push(allItems[i]) }
@@ -57,7 +56,10 @@ function expandItem(itemExpanding) {
     }
     primary.classList.add("expanded")
     
-    if(itemExpanding.parentElement.parentElement.getAttribute("sound") == "true") audio.play()
+    if(itemExpanding.parentElement.parentElement.getAttribute("sound") == "true") {
+        const newAudio = audio.cloneNode()
+        newAudio.play()
+    }
 }
 
 function dexpandItem(itemDexpanding) {
