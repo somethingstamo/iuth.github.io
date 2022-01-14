@@ -47,6 +47,8 @@ ul#navbar {
     color: white;
     text-decoration: none;
     transition: 0.05s ease-in-out;
+    cursor: pointer;
+    user-select: none;
 }
 
 #navbar a.secondary {
@@ -91,4 +93,10 @@ ul#navbar {
     background-color: lightgray;
     box-shadow: 0px 5px darkslategray inset;
     padding-top: 15px;
+}
+
+.communism {
+    position: fixed;
+    width: 75px;
+    border-radius: 50%;
 }
