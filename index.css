@@ -47,6 +47,8 @@ ul#navbar {
     color: white;
     text-decoration: none;
     transition: 0.05s ease-in-out;
+    cursor: pointer;
+    user-select: none;
 }
 
 #navbar a.secondary {
