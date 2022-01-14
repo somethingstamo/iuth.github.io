@@ -1,14 +1,15 @@
 .button {
-    width: 400px;
-    height: 100px;
     font-size: 80px;
-    line-height: 100px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 10px currentColor;
     position: absolute;
     user-select: none;
     transition: all 0.1s ease-in-out;
+}
+
+a{
+    text-decoration: none;
 }
 
 .button:hover{
@@ -25,5 +26,4 @@ ul{
     display: inline;
     list-style-type: none;
     margin: 0px;
-    padding: 0px;
 }
