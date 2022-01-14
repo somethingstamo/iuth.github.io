@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Rad html file very epic.</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="./testing.js" defer></script>
+</head>
+
+<body>
+    <div id="body">
+        
+        <div class="colorful rect"><span onClick="smile()" id="smile">:)</span></div>
+        <div style="width: 350px; height: 350px;" onMouseOver="startRainbow()" 
+            onMouseLeave="stopRainbow()" id="rainbowbase" class="rainbow 0 rect"></div>
+        <div id="pong" class="rect" style="width: 350px; height: 350px;" onmousemove="manuallyMovePongPaddle(event)"
+             onmouseenter="mouseEnterPong()" onmouseleave="mouseExitPong()">
+            <div id="leftpaddle" style="width:10px; height:40px; left:20px; top:155px;"></div>
+            <div id="ball" style="width:20px; height:20px;"></div>
+        </div>
+        <div style="width: 350px; height:350px; background-color:darkslategray; float:left;" class="rect"></div>
+
+        <div style="width:100%; height:40px; border: darkslategray 3px solid; border-left: none; border-right: none;
+                    float:left; line-height:40px; margin-top: 50px;">
+            <slide id="bruh" style="font-size: 20px; overflow-y:hidden;">bruh</slide>
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <img src="./menu.png" id="menuimg" onClick="toggleSidebar()">
+        <div id="sidebarlist">
+            <a style="font-size: 40px;"">Home</a>
+            <div id="sidebarline"></div>
+            <a>Yo Mama</a>
+            <a>About</a>
+            <a>Contact</a>
+            <br>
+            <a style="font-size:15px;">These buttons don't do anything btw.</a>
+            <!-- <a>This is a page.</a>
+            <a>This is another.</a>
+            <a>So is this.</a>
+            <a>Jk lol.</a> -->
+        </div>
+        <div id="othericons">
+            <a target="_blank" onClick="randomizeLink()" id="wimtwitter">Twitter</a> |
+            <a href="https://webcamera.io/" target="_blank">Your Face</a> | 
+            <a href="https://www.reddit.com/r/rotisseriechicken/" target="_blank">El Baño</a>
+        </div>
+    </div>
+    
+    <div id="header">
+        <img src="./cookie.png" id="logo">
+        <ul style="margin-left: 15px">
+            <li class="left" onClick="add()"><a>Add</a></li>
+            <li onClick="subtract()">Subtract</li>
+            <li onClick="expand()">Expand</li>
+            <li class="right" onClick="dexpand()">Dexpand</li>
+        </ul>
+        <div id="title" style="display:inline-block;">
+            The Bruh<span style="font-weight:500">&trade;</span>
+        </div>
+    </div>
+
+</body>

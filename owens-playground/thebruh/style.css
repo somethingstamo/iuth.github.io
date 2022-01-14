@@ -1,0 +1,234 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}   
+
+body {
+    margin: 0;
+}
+
+#header {
+    height:50px; 
+    background-color:rgb(194, 194, 194);  
+    white-space:nowrap; 
+    position:fixed;
+    width:100%;
+}
+
+#body {
+    position: fixed; 
+    left: 50px; 
+    top: 50px; 
+    width: calc(100% - 50px); 
+    height: calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#sidebar {
+    width: 350px; 
+    top: 50px;
+    left: -300px;
+    height: calc(100% - 50px); 
+    position: fixed; 
+    background-color: rgb(221, 221, 221);
+    transition: left 0.5s ease-in-out;
+}
+
+#menuimg {
+    float: right;
+    width: 40px; 
+    height: 40px; 
+    padding: 5px;
+    margin: 5px;
+    background-color:rgb(202, 202, 202);
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border 0.005s ease-in-out, background-color 0.05s ease-in-out;
+}
+
+#menuimg:hover {
+    background-color:rgb(182, 182, 182);
+}
+
+#menuimg:active {
+    border: gray solid 2px;
+    background-color: rgb(160, 160, 160);
+}
+
+#sidebarlist {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#sidebarlist a {
+    display: block;
+    text-decoration: none;
+    margin: 0px;
+    padding: 10px;
+    padding-left: 20px;
+    transition: background-color 0.05s ease-in-out;
+    font-size:30px;
+    user-select: none;
+    color:rgb(72, 72, 72);
+}
+
+#sidebarlist a:hover.clickable {
+    background-color: rgb(186, 186, 186);
+    cursor: pointer;
+}
+
+#sidebarlist a:active.clickable {
+    background-color: rgb(162, 162, 162);
+}
+
+#sidebar #sidebarline {
+    border-bottom:rgb(186, 186, 186) 5px solid; 
+    width: calc(100% - 50px); 
+    height:0px;
+    transition: width 0.5s ease-in-out
+}
+
+.sidebarelement {
+    /* Don't rescale sidebar div, have it already sized 
+       up and just slide it to the right to show it */
+    margin-left: 20px;
+    margin-top: 50px;
+    visibility: hidden;
+    transition: visibility 0.5s ease-out;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+#othericons {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: inherit;
+}
+
+.colorful {
+    line-height: 250px;
+    color: white;
+    width: 250.8px;
+    height: 250.8px;
+    border: 50px solid #CCCCCC;
+    background-color: #B7B7B7;
+    font-size: 100px;
+    text-align: center;
+    float: left;
+    
+}
+
+.colorful:hover {
+    font-size: 200px;
+    border: 50px solid lightskyblue;
+    background-color: #f5a9b8;
+    font-weight: 1000;
+}
+
+#rainbowbase {
+    float: left;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.rainbow {
+    line-height: 250px;
+    font-size: 100px;
+    margin: 10px;
+    float: left;
+    background-color: #f5a9b8;
+    text-align: center;
+}
+
+#header ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+#header li {
+    user-select: none; 
+    float: left;
+    display: block;
+    background-color: darkslategray;
+    padding: 5px 10px;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+    transition: padding 0.02s ease-in-out, margin 0.02s ease-in-out;
+    margin: 0px;
+    position: relative;
+}
+
+#header li:hover {
+    background-color: darkgray;
+    cursor: pointer;
+    padding: 7px 12px;
+    margin: -2px;
+    z-index: 1;
+}
+
+#header li:active {
+    padding: 5px 10px;
+    margin: 0px;
+    background-color: rgb(144, 144, 144);
+}
+
+#header li.left {
+    border-radius: 0px 0px 0px 10px;
+}
+
+#header li.right {
+    border-radius: 0px 0px 10px 0px;
+}
+
+#header #title {
+    line-height: 50px; 
+    margin-left: 10px; 
+    font-size: 45px;
+    font-weight: 900;
+    user-select: none;
+}
+
+#header #logo {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 5px;
+}
+
+#smile {
+    user-select: none;
+    cursor: pointer;
+}
+
+slide {
+    position: relative;
+    display: block;
+    clear: both;
+    overflow-x: hidden;
+}
+
+#pong {
+    background-color: black;
+    float: left;
+}
+
+#leftpaddle, #rightpaddle, #ball {
+    position: relative;
+    background-color: white;
+    display: block;
+}
+
+#ball {
+    /* visibility: hidden; */
+    margin-top: -40px;
+}
+
+.rect {
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    
+}
