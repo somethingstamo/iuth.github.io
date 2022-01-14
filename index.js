@@ -1,8 +1,3 @@
-
-/**
- * 
- * @param {HTMLElement} item 
- */
 var audio = new Audio("./kristoffers-playground/click.wav")
 
 function resizeSecondaries() {
@@ -123,12 +118,12 @@ function badFun() {
 }
 
 setInterval(function() {
-    const invisable = document.getElementById("invisable");
+    const invisible = document.getElementById("invisible");
     // decrease invisable opacity by 1% every second
     // invisable.style.opacity = invisable.style.opacity - 0.01
     // if(invisable.style.opacity <= 0) {
     //     invisable.style.opacity = 0
     //     invisable.style.display = "none"
     // }
-    console.log(invisable.style.opacity)
+    console.log(invisible.style.opacity)
 }, 1000)
