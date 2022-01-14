@@ -1,0 +1,11 @@
+#startbutton{
+    background-color: rgb(0, 255, 0);
+    width: 250px;
+    height: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 80px;
+    margin: auto;
+    border-radius: 30%;
+    cursor: pointer;
+}   
