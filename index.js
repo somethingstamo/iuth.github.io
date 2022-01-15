@@ -2,12 +2,13 @@ var audio = new Audio("./kristoffers-playground/click.wav")
 
 function resizeSecondaries() {
     let navbar = document.getElementById("navbar")
+    var primaries = []
     for(let i = 0; i < navbar.children.length; i++) {
         let li = navbar.children[i].children
         let secondaries = [], primary, numSecondaries
         for(let k = 0; k < li.length; k++) { 
             if(li[k].classList.contains("secondary")) { secondaries.push(li[k]) }
-            else if(li[k].classList.contains("primary")) { primary = li[k] }
+            else if(li[k].classList.contains("primary")) { primary = li[k]; primaries.push(li[k]) }
         }
 
         if(navbar.children[i].hasAttribute("items")) { numSecondaries = navbar.children[i].getAttribute("items") } 
@@ -18,11 +19,25 @@ function resizeSecondaries() {
             secondaries[j].style.left = j * secondaryWidth + "px"
         }
     }
+    divHeight = 1
+    divWidth = 0
+    maxWidth = navbar.offsetWidth
+    for(let i = 0; i < primaries.length; i++) {
+        if(divWidth + primaries[i].offsetWidth > maxWidth) {
+            divHeight ++
+            divWidth = primaries[i].offsetWidth
+        } else {
+            divWidth += primaries[i].offsetWidth
+        }
+    } 
+    navbar.style.height = divHeight * navbar.offsetHeight
+    console.log(divHeight)
 }
 
 function initializeItems() {
     let navbar = document.getElementById("navbar")
     for(let i = 0; i < navbar.children.length; i++) {
+        navbar.children[i].style.setProperty("--id", i)
         let li = navbar.children[i].children
         let secondaries = [], primary
         for(let k = 0; k < li.length; k++) { 
@@ -50,7 +65,6 @@ function initializeItems() {
         }
         if(navbar.getAttribute("shape") == "full") {
             navbar.style.width = "100%"
-            navbar.style.height = "45px"
             navbar.style.backgroundColor = "gray"
         } else if(navbar.getAttribute("shape") != "hard") {
             if(i == navbar.children.length - 1) {
@@ -125,5 +139,5 @@ setInterval(function() {
     //     invisable.style.opacity = 0
     //     invisable.style.display = "none"
     // }
-    console.log(invisible.style.opacity)
+    // console.log(invisible.style.opacity)
 }, 1000)
