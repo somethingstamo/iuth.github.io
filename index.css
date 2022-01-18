@@ -18,6 +18,7 @@ body {
     line-height: 100px;
     font-weight: bolder;
     user-select: none;
+    overflow: hidden;
 }
 
 #header span {
@@ -33,35 +34,49 @@ ul#navbar {
 }
 
 #navbar li {
+    position: relative;
     float: left;
+    width: 250px;
+    z-index: calc(0 - var(--id));
 }
 
 #navbar a {
-    margin-top: 0px;
-    width: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: gray;
     display: block;
-    text-align: center;
+    position: relative;
+
+    background-color: gray;
     color: white;
+    border: 0px solid darkslategray;
     text-decoration: none;
+    text-align: center;
     transition: 0.05s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+#navbar a.primary {
+    height: 45px;
+    line-height: 45px;
 }
 
 #navbar a.secondary {
-    width: 110px;
-    padding: 0;
     height: 0px;
     float: left;
+    line-height: 35px;
     visibility: hidden;
+    /* Max possible height: Primary border + secondary height + secondary border = 10 + 35 + 10 = 55 */
+    margin-bottom: -55px;
 }
 
 #navbar a.secondary.expanded {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    visibility: unset;
-    height: unset;
+    height: 35px;
+    visibility: visible;
+    margin-top: 10px;
+}
+
+#navbar a.primary.expanded {
+    /* transition: 2s ease-in-out, margin 0s; */
+    margin-bottom: -10px;
 }
 
 #navbar a.primary.right.expanded, 
@@ -72,23 +87,43 @@ ul#navbar {
 }
 
 #navbar a.primary.left.expanded,
-#navbar a.primar.persistentright:not(.expanded) 
+#navbar a.primary.persistentleft:not(.expanded),
 #navbar a.secondary.left:hover, 
 #navbar a.secondary.presistentleft {
     border-bottom-left-radius: 10px;
 }
 
-#navbar a.secondary:hover, #navbar a.primary.expanded {
-    padding-top: 20px;
-    box-shadow: 0px 10px darkslategray inset;
+#navbar a.primary.expanded, 
+#navbar a.secondary:hover { 
+    border-top-width: 10px; 
 }
 
-#navbar a:hover {
-    background-color: darkgray;
-}
+#navbar a:hover { background-color: darkgray; }
 
 #navbar a.secondary:active, #navbar a.primary:active {
     background-color: lightgray;
-    box-shadow: 0px 5px darkslategray inset;
-    padding-top: 15px;
+    border-top-width: 5px;
+}
+
+.communism {
+    position: fixed;
+    left: 190px;
+    top: calc((100px - 130px) / 2);
+    width: 130px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#invisable {
+    animation-name: fadeout;
+    animation-duration: 60s;
 }
