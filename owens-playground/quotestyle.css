@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+quote {
+    font-family: Cedarville Cursive;
+    display: block;
+    position: absolute;
+    font-size: 25px;
+    line-height: 27px;
+}
+
+quote a {
+    font-weight: bolder;
+    
+}

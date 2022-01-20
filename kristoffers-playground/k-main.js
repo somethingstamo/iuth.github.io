@@ -21,3 +21,12 @@ function OnMouseLeave(element) {
         elements[i].style.marginTop = "0px";
     }
 }
+
+function OnMouseDown(element) {
+    elements = document.getElementsByClassName(element.className[0]);
+    
+    for(let i = 0; i< elements.length; i++) {
+        elements[i].style.boxShadow = "0px 2px currentColor";
+        elements[i].style.marginTop = "8px";
+    }
+}
