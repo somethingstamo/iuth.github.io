@@ -1,0 +1,39 @@
+:root {
+    --number-of-days: 7;
+    --sidebar-width-ratio: 0.75;
+    --number-of-columns: calc(var(--number-of-days) + 2 * var(--sidebar-width-ratio));
+
+    --schedule-default-width: 1000px;
+}
+
+body {
+    margin: 0px;
+}
+
+#schedule {
+    position: relative;
+    width: min(100%, var(--schedule-default-width));
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(236, 236, 236); /* TODO: Get rid of this later or something */
+}
+
+.column div {
+    position: fixed;
+    overflow: hidden; 
+    font-family: Arial, Helvetica, sans-serif;
+    --height: 50px;
+    text-align: center;
+    border: 1px solid black;
+    height: var(--height);
+    line-height: var(--height);
+}
+
+.column.sidebar {
+    width: calc(100% / var(--number-of-columns) * var(--sidebar-width-ratio))
+}
+
+.column div.header {
+    --height: calc(var(--schedule-default-width) / var(--number-of-columns) * 0.3);
+    font-weight: bold;
+}
